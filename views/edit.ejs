@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit User</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and global settings */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: hsla(298, 68%, 90%, 1);
+
+      background: linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+
+      background: -moz-linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+
+      background: -webkit-linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+
+      filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F6D5F7", endColorstr="#FBE9D7", GradientType=1);
+    }
+
+    /* Container styling */
+    .reg-form {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      width: 360px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .reg-form:hover {
+      transform: scale(1.02);
+    }
+
+    .reg-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #343a40;
+    }
+
+    /* Form styling */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input {
+      padding: 12px 15px;
+      margin: 8px 0;
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    form input:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    .submit-btn {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 400px) {
+      .reg-form {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reg-form">
+    <h2>Edit User</h2>
+    <form action="/edit/<%= user.id %>" method="post">
+      <input type="text" placeholder="First Name" name="fname" value="<%= user.fname %>" required />
+      <input type="text" placeholder="Last Name" name="lname" value="<%= user.lname %>" required />
+      <input type="number" placeholder="Age" name="age" value="<%= user.age %>" required />
+      <input type="text" placeholder="Father Name" name="fathername" value="<%= user.fathername %>" required />
+      <input type="tel" placeholder="Mobile No." name="mobno" value="<%= user.mobno %>" required pattern="[0-9]{10}"
+        maxlength="10" minlength="10" title="Mobile number must be exactly 10 digits" />
+      <input type="text" placeholder="Batch" name="batch" value="<%= user.batch %>" required />
+      <button type="submit" class="submit-btn">Update</button>
+    </form>
+  </div>
+</body>
+
+</html>

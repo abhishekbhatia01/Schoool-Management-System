@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+        *{
+            font-family: "Open Sans", serif;
+        }
+        :root {
+            --primary-color: #27445D;
+            --secondary-color: #27445D;
+            --accent-color: #709BCD;
+            /* --background-color: #608BC1; */
+            --text-color: #000000;
+            --sidebar-bg: #27445D;
+            --sidebar-hover: #27445D;
+            --button-bg: #0294C5;
+            --button-hover: #203A5F;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            /* background-color: var(--background-color); */
+            color: var(--text-color);
+            background: url(/images/photo-1501349800519-48093d60bde0.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: var(--sidebar-bg);
+            color: #FFFFFF;
+            padding-top: 20px;
+            position: fixed;
+            height: 100%;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sidebar a {
+            display: block;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: var(--sidebar-hover);
+            box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+        }
+        .content {
+            margin-left: 250px;
+            flex: 1;
+            /* padding: 20px; */
+            text-align: center;
+        }
+        .welcome {
+            color: var(--primary-color);
+            font-size: xx-large;
+            /* margin-bottom: 30px; */
+            margin-top: 225px;
+        }
+        .st {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        .box {
+            background-color: var(--button-bg);
+            color: #FFFFFF;
+            height: 180px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .box h2{
+            font-size: 30px;
+            font-weight: 400;
+        }
+       
+        .box:hover {
+            background-color: var(--button-hover);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                padding: 100px;
+                margin-left: 200px;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                flex-direction: column;
+                background-image: none;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                text-align: center;
+            }
+            .content {
+                margin-top: -200px;
+                margin-left: 0;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a href="/dashome">Home</a>
+        <a href="/admindash">Students</a>
+        <a href="#">Teacher</a>
+        <a href="/choose">Logout</a>
+    </div>
+    <div class="content">
+        <div class="welcome">
+            <h3>You can add or see students.</h3>
+        </div>
+        <div class="st">
+            <a href="/registeruser" class="box">
+                <h2>Add Student</h2>
+                <p>You can add students here.</p>
+            </a>
+            <a href="/show" class="box">
+                <h2>See Students</h2>
+                <p>You can see students here.</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
