@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "fname": "Abhishek",
+    "lname": "Bhatia",
+    "age": "20",
+    "fathername": "Suresh Kumar",
+    "mobno": "9034678817",
+    "batch": "2023"
+  },
+  {
+    "id": 2,
+    "fname": "Akshit",
+    "lname": "Mittal",
+    "age": "19",
+    "fathername": "Rajiv Mittal",
+    "mobno": "9525154558",
+    "batch": "2023"
+  }
+]
